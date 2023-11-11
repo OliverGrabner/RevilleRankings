@@ -1,5 +1,9 @@
 import pandas as pd
+import sys
 import matplotlib.pyplot as plt
+from PyQt5.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QPushButton, QTextBrowser, QLabel, QScrollArea)
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.figure import Figure
 
 # Loading Data
 fall_22_df = pd.read_csv("grd2022EN.csv", sep=',', names=["SECTION", "A", "B", "C", "D", "F", "A - F", "GPA", "I", "S", "U", "Q", "X", "TOTAL", "INSTRUCTOR"])
@@ -63,24 +67,8 @@ def plot_grades_piechart(row):
     plt.legend(grades, title="Grades", loc="best", fontsize=10, title_fontsize=12)
     plt.tight_layout()
     plt.show()
-"""
-top_instructors_df = top_three_by_gpa('CHEM-107')
-first_professor = top_instructors_df.iloc[0]
-
-plot_grades_piechart(first_professor)
-first_professor.head()
-print(first_professor['SECTION'])
-"""
-#with open('data1.html', 'w') as f:
-#    f.write(top_three_by_gpa('CHEM-107'))
 
 
-import sys
-import matplotlib.pyplot as plt
-from PyQt5.QtWidgets import (QApplication, QWidget, QVBoxLayout, QHBoxLayout,
-                             QLineEdit, QPushButton, QTextBrowser, QLabel, QScrollArea)
-from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
-from matplotlib.figure import Figure
 
 class GradeAnalyzer(QWidget):
     def __init__(self):
