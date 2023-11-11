@@ -20,4 +20,4 @@ To run the script, navigate to the directory containing the script and execute i
 ## Output
 The script produces an interactive interface displaying the grade distribution for selected classes and instructors, as shown in the example image below. It also generates a CSV file containing the aggregated data.
 
-![Example Output](path_to_image.png)
+![Example Output](images/RevRankEx.png)
